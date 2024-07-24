@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TesteTecnicoProduto.Application.Interfaces;
 using TesteTecnicoProduto.Application.Models.Produto.Request;
 using TesteTecnicoProduto.Domain.Exceptions.Produto;
@@ -7,6 +8,7 @@ namespace TesteTecnicoProduto.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProdutoController : ControllerBase
     {
         private readonly IProdutoAppService _produtoAppService;
